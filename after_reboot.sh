@@ -28,8 +28,8 @@ printf ${WHITE}
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 
-printf ${CYAN}"If you want to install our rice and recommended software please log in as the user you just created and run the following command:\n"
-printf ${WHITE}"cd ${scriptdir}/install_software.sh\n"
+printf ${CYAN}"If you want to install recommended software please log in as a normal user and run the following script:\n"
+printf ${WHITE}"${scriptdir}/install_software.sh\n"
 
 
 
