@@ -8,6 +8,8 @@ MAGENTA='\033[1;35m'
 CYAN='\033[1;96m'
 BLUE='\033[1;34m'
 
+scriptdir=$(pwd)
+
 if [[ `id -u` -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
 ./test_network.sh
@@ -26,24 +28,8 @@ printf ${WHITE}
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 
-while true; do
-
-
-    printf ${CYAN}"Do you want to install our rice and recommended software? y/n \n>"
-    read use_rice
-    printf ${WHITE}
-    
-    if [ "$use_rice" = "y" ]; then
-	./deploy_software.sh
-    	break
-    elif [ "$use_rice" = "n" ]; then
-    	break
-    else
-        printf ${LIGHTRED}"%s is an invalid answer, do it correctly" $use_rice
-        printf ${WHITE}".\n"
-        sleep 2
-    fi
-done
+printf ${CYAN}"If you want to install our rice and recommended software please log in as the user you just created and run the following command:\n"
+printf ${WHITE}"cd ${scriptdir}/install_software.sh\n"
 
 
 
