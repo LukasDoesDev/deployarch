@@ -8,13 +8,15 @@ MAGENTA='\033[1;35m'
 CYAN='\033[1;96m'
 BLUE='\033[1;34m'
 
+if [[ `id -u` -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
+
 ./test_network.sh
 if [ "$?" != "0" ]; then
     exit 1
 fi
 
 printf ${WHITE}"### Installing bash-completion\n"
-pacman -S bash-completion
+pacman --noconfirm -S bash-completion
 
 printf ${WHITE}"### Setting up non-root user\n"
 ./add_user.sh
@@ -27,12 +29,12 @@ echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 while true; do
 
 
-    printf ${CYAN}"Do you want to install our rice? y/n \n>"
+    printf ${CYAN}"Do you want to install our rice and recommended software? y/n \n>"
     read use_rice
     printf ${WHITE}
     
     if [ "$use_rice" = "y" ]; then
-	./deploy_rice.sh
+	./deploy_software.sh
     	break
     elif [ "$use_rice" = "n" ]; then
     	break
