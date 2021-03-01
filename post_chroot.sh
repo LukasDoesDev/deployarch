@@ -41,15 +41,14 @@ locale-gen
 
 printf ${CYAN}"Enter the hostname you want to use\n>"
 read newHostname
-
 echo $newHostname > /etc/hostname
+echo "127.0.0.1       localhost" >> /etc/hosts
+echo "::1             localhost" >> /etc/hosts
+echo "127.0.1.1       $newHostname.localdomain $newHostname" >> /etc/hosts
 
-echo "127.0.0.1	localhost" >> /etc/hosts
-echo "::1	        localhost" >> /etc/hosts
 
 
-
-pacman -Sy networkmanager
+pacman --noconfirm -Sy networkmanager
 
 systemctl enable NetworkManager
 
@@ -71,7 +70,7 @@ done
 
 
 
-pacman -S grub efibootmgr
+pacman --noconfirm -Sy grub efibootmgr
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi
 
