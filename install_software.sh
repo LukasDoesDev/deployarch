@@ -40,10 +40,10 @@ cd ..
 
 
 # Install packages needed for runtime
-sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot
+sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit
 
 # Install other software
-sudo pacman --noconfirm -Sy firefox nemo xdg-utils
+sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim
 paru --noconfirm -S vscodium-bin cava # vscodium is a fork of vscode without telemetry and cava is a terminal-based audio visualizer
 
 # Get dotfiles
