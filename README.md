@@ -32,12 +32,8 @@ And after that you should have a working Arch installation.
 ## Install recommended software:
 ### (WARNING) Run as a non-root user, otherwise AUR will fail
 ```sh
-# Download scripts and run install_software.sh script
-curl -O https://codeload.github.com/LukasDoesDev/deployarch2/zip/master
-sudo pacman -Sy unzip
-unzip master
-cd deployarch2-master
-./install_software.sh
+# Download and run install_software.sh script
+bash <(curl -s https://www.thatonelukas.tk/install_software.sh)
 ```
 or if you used the setup script, this should do it:
 ```sh
