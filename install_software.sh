@@ -43,8 +43,8 @@ cd ..
 sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit
 
 # Install other software
-sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight lwp-request youtube-dl icdiff
-paru --noconfirm -S vscodium-bin cava # vscodium is a fork of vscode without telemetry and cava is a terminal-based audio visualizer
+sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight youtube-dl
+paru --noconfirm -S vscodium-bin cava icdiff
 
 # Get dotfiles
 curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.sh | bash
