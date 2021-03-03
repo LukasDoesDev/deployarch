@@ -52,11 +52,6 @@ curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
 
-echo "Now you can run \"source .bashrc\" and use the \"startx\" command to start DWM"
-echo "terminal hotkey in dwm is Alt+Shift+Enter"
-echo "exit hotkey in dwm is Alt+Shift+Q"
-echo "firefox hotkey in dwm is Alt+Shift+F"
-
 echo '"source .bashrc" to apply bash aliases, etc.f'
 echo 'startx command to start dwm'
 echo ''
