@@ -49,6 +49,12 @@ paru --noconfirm -S vscodium-bin cava icdiff
 # Get dotfiles
 curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.sh | bash
 
+# Install plugins
+echo ':PlugInstall' >> /tmp/plugInstall.txt
+echo ':wq' >> /tmp/plugInstall.txt
+echo ':wq' >> /tmp/plugInstall.txt
+nvim -s /tmp/plugInstall.txt
+
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
 
