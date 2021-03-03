@@ -14,25 +14,19 @@ Do the following in your UEFI/BIOS settings:
 Boot to the official installlation ISO and run the following commands:
 ```sh
 loadkeys # <your keyboard layout, for me it's "fi">
-curl -O https://codeload.github.com/LukasDoesDev/deployarch2/zip/master
-pacman -Sy unzip
-unzip master
-cd deployarch2-master
-./setup_arch.sh
+# Download and run a script that will download and run the REAL script :D
+bash <(curl -sL thatonelukas.tk/deployarch.sh)
 ```
 And after that script has run reboot to the drive you installed Arch on, login to root and run these commands:
 ```sh
-curl -O https://codeload.github.com/LukasDoesDev/deployarch2/zip/master
-pacman -Sy unzip
-unzip master
-cd deployarch2-master
-./after_reboot.sh
+# Download and run a script that will download and run the REAL script :D
+bash <(curl -sL thatonelukas.tk/after_reboot.sh)
 ```
 And after that you should have a working Arch installation.
 ## Install recommended software:
 ### (WARNING) Run as a non-root user, otherwise AUR will fail
 ```sh
-# Run script that will download and run the REAL script :D
+# Download and run a script that will download and run the REAL script :D
 bash <(curl -sL thatonelukas.tk/install_software.sh)
 ```
 or if you used the setup script, this should do it:
