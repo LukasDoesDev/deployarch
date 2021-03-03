@@ -43,6 +43,6 @@ or if you used the setup script, this should do it:
 "startx" to start dwm
 
 my dwm keybinds:
-terminal : Alt+Shift+Enter
-exit     : Alt+Shift+Q
-firefox   : Alt+Shift+F
+ - terminal : Alt+Shift+Enter
+ - exit     : Alt+Shift+Q
+ - firefox   : Alt+Shift+F
