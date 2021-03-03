@@ -43,7 +43,7 @@ cd ..
 sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit
 
 # Install other software
-sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim
+sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight lwp-request youtube-dl icdiff
 paru --noconfirm -S vscodium-bin cava # vscodium is a fork of vscode without telemetry and cava is a terminal-based audio visualizer
 
 # Get dotfiles
@@ -51,3 +51,8 @@ curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.
 
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
+
+echo "Now you can run \"source .bashrc\" and use the \"startx\" command to start DWM"
+echo "terminal hotkey in dwm is Alt+Shift+Enter"
+echo "exit hotkey in dwm is Alt+Shift+Q"
+echo "firefox hotkey in dwm is Alt+Shift+F"
