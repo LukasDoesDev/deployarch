@@ -29,3 +29,15 @@ cd deployarch2-master
 ./after_reboot.sh
 ```
 And after that you should have a working Arch installation.
+## Install recommended software:
+```sh
+curl -O https://codeload.github.com/LukasDoesDev/deployarch2/zip/master
+pacman -Sy unzip
+unzip master
+cd deployarch2-master
+./after_reboot.sh
+```
+or if you used the setup script, this should do it:
+```sh
+/root/deploayarch2-master/install_software.sh
+```
