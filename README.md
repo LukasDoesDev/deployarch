@@ -32,7 +32,7 @@ And after that you should have a working Arch installation.
 ## Install recommended software:
 ```sh
 curl -O https://codeload.github.com/LukasDoesDev/deployarch2/zip/master
-pacman -Sy unzip
+sudo pacman -Sy unzip
 unzip master
 cd deployarch2-master
 ./after_reboot.sh
