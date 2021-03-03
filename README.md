@@ -30,6 +30,7 @@ cd deployarch2-master
 ```
 And after that you should have a working Arch installation.
 ## Install recommended software:
+### (WARNING) Run as a normal user, otherwise AUR will fail
 ```sh
 curl -O https://codeload.github.com/LukasDoesDev/deployarch2/zip/master
 sudo pacman -Sy unzip
