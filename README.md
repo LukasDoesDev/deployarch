@@ -39,3 +39,10 @@ or if you used the setup script, this should do it:
 ```sh
 /root/deploayarch2-master/install_software.sh
 ```
+"source .bashrc" to apply bash stuff
+"startx" to start dwm
+
+my dwm keybinds:
+terminal : Alt+Shift+Enter
+exit     : Alt+Shift+Q
+firefox   : Alt+Shift+F
