@@ -32,7 +32,7 @@ And after that you should have a working Arch installation.
 ## Install recommended software:
 ### (WARNING) Run as a non-root user, otherwise AUR will fail
 ```sh
-# Download and run install_software.sh script
+# Run script that will download and run the REAL script :D
 bash <(curl -s https://www.thatonelukas.tk/install_software.sh)
 ```
 or if you used the setup script, this should do it:
