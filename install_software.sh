@@ -40,7 +40,7 @@ cd ..
 
 
 # Install packages needed for runtime
-sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit
+sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv
 
 # Install other software
 sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight youtube-dl rsync man-db tree
