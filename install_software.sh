@@ -86,7 +86,7 @@ paru --noconfirm -S libxft-bgra
 sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv
 
 # Install other software
-sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight youtube-dl rsync man-db tree
+sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight youtube-dl rsync man-db tree jq
 paru --noconfirm -S vscodium-bin cava icdiff
 
 # Get dotfiles
