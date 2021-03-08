@@ -39,6 +39,49 @@ sudo make clean install
 cd ..
 
 
+# font stuff
+echo "Setting up Noto Emoji font..."
+sudo pacman --noconfirm -Sy noto-fonts-emoji --needed
+echo '<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+ <alias>
+   <family>sans-serif</family>
+   <prefer>
+     <family>Noto Sans</family>
+     <family>Noto Color Emoji</family>
+     <family>Noto Emoji</family>
+     <family>DejaVu Sans</family>
+   </prefer> 
+ </alias>
+
+ <alias>
+   <family>serif</family>
+   <prefer>
+     <family>Noto Serif</family>
+     <family>Noto Color Emoji</family>
+     <family>Noto Emoji</family>
+     <family>DejaVu Serif</family>
+   </prefer>
+ </alias>
+
+ <alias>
+  <family>monospace</family>
+  <prefer>
+    <family>Noto Mono</family>
+    <family>Noto Color Emoji</family>
+    <family>Noto Emoji</family>
+    <family>DejaVu Sans Mono</family>
+   </prefer>
+ </alias>
+</fontconfig>
+
+' > /etc/fonts/local.conf
+fc-cache
+
+# enable color font support
+paru --noconfirm -S libxft-bgra
+
 # Install packages needed for runtime
 sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv
 
@@ -49,7 +92,7 @@ paru --noconfirm -S vscodium-bin cava icdiff
 # Get dotfiles
 curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.sh | bash
 
-# Install plugins
+# Install neovim plugins
 echo ':PlugInstall' >> /tmp/plugInstall.txt
 echo ':wq' >> /tmp/plugInstall.txt
 echo ':wq' >> /tmp/plugInstall.txt
