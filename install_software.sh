@@ -89,6 +89,9 @@ sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh 
 sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight youtube-dl rsync man-db tree jq
 paru --noconfirm -S vscodium-bin cava icdiff
 
+# Add colors to pacman
+sed -i 's/#Color/Color/g' /etc/pacman.conf
+
 # Get dotfiles
 curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.sh | bash
 
