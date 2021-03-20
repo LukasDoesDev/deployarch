@@ -13,10 +13,13 @@ makepkg -si
 # Install NerdFonts symbols and JetBrains Mono
 paru --noconfirm -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
-# Create dev directory
-cd ~
-mkdir dev
-cd dev
+# Create ~(dev directory
+mkdir $HOME/dev
+cd $HOME/dev
+
+# Create ~(dev/rice directory
+mkdir $HOME/dev/rice
+cd $HOME/dev/rice
 
 # Clone repos
 git clone https://github.com/LukasDoesDev/st.git
