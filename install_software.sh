@@ -5,14 +5,6 @@ if [[ `id -u` -eq 0 ]] ; then echo "Please do not run as root, AUR packages will
 # Install base development and git packages
 sudo pacman --noconfirm -Sy --needed base-devel git
 
-# Install paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-
-# Install NerdFonts symbols and JetBrains Mono
-paru --noconfirm -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
-
 # Create ~(dev directory
 mkdir $HOME/dev
 cd $HOME/dev
@@ -20,6 +12,14 @@ cd $HOME/dev
 # Create ~(dev/rice directory
 mkdir $HOME/dev/rice
 cd $HOME/dev/rice
+
+# Install paru
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+# Install NerdFonts symbols and JetBrains Mono
+paru --noconfirm -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
 # Clone repos
 git clone https://github.com/LukasDoesDev/st.git
