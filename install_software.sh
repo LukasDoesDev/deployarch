@@ -106,6 +106,9 @@ sudo pacman --noconfirm -Sy youtube-dl youtube-viewer
 # Install other software
 sudo pacman --noconfirm -Sy xdg-utils xdg-user-dirs unzip highlight nmap fzf
 
+# Install gaming software
+sudo pacman --noconfirm -Sy minecraft-launcher steam lutris
+
 # Add colors to pacman
 sed -i 's/#Color/Color/g' /etc/pacman.conf
 
