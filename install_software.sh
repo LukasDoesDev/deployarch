@@ -86,11 +86,25 @@ fc-cache
 paru --noconfirm -S libxft-bgra
 
 # Install packages needed for runtime
-sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv
+sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv jq
+
+# Install rice screenshot software
+sudo pacman --noconfirm -Sy cmatrix
+paru --noconfirm -S cava
+
+# Install dev software
+sudo pacman --noconfirm -Sy python3 python-pip
+paru --noconfirm -S vscodium-bin
+
+# Install general software
+sudo pacman --noconfirm -Sy firefox nemo neovim grep rsync man-db tree git discord gimp inkscape wget curl
+paru --noconfirm -S icdiff
+
+# Install youtube stuff
+sudo pacman --noconfirm -Sy youtube-dl youtube-viewer
 
 # Install other software
-sudo pacman --noconfirm -Sy firefox nemo xdg-utils xdg-user-dirs nano wget unzip neovim grep highlight youtube-dl rsync man-db tree jq
-paru --noconfirm -S vscodium-bin cava icdiff
+sudo pacman --noconfirm -Sy xdg-utils xdg-user-dirs unzip highlight nmap fzf
 
 # Add colors to pacman
 sed -i 's/#Color/Color/g' /etc/pacman.conf
@@ -98,11 +112,12 @@ sed -i 's/#Color/Color/g' /etc/pacman.conf
 # Get dotfiles
 curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.sh | bash
 
-# Install neovim plugins
+# Make neovim install plugins
 echo ':PlugInstall' >> /tmp/plugInstall.txt
 echo ':wq' >> /tmp/plugInstall.txt
 echo ':wq' >> /tmp/plugInstall.txt
 nvim -s /tmp/plugInstall.txt
+rm -f /tmp/plugInstall.txt
 
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
@@ -110,6 +125,7 @@ xdg-mime default nemo.desktop inode/directory
 echo '"source .bashrc" to apply bash aliases, etc.f'
 echo 'startx command to start dwm'
 echo ''
-echo 'terminal : Alt+Shift+Enter'
-echo 'exit     : Alt+Shift+Q'
-echo 'firefox   : Alt+Shift+F'
+echo 'terminal     : Alt+Shift+Enter'
+echo 'exit         : Alt+Shift+Q'
+echo 'firefox       : Alt+Shift+F'
+echo 'screenshot   : Alt+Shift+S'
