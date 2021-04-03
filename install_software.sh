@@ -95,6 +95,7 @@ paru --noconfirm -S cava
 # Install dev software
 sudo pacman --noconfirm -Sy python3 python-pip
 paru --noconfirm -S vscodium-bin
+bash <(curl -sL https://raw.githubusercontent.com/LukasDoesDev/deployarch2/master/install_nvm.sh)
 
 # Install general software
 sudo pacman --noconfirm -Sy firefox nemo neovim grep rsync man-db tree git discord gimp inkscape wget curl
@@ -107,7 +108,7 @@ sudo pacman --noconfirm -Sy youtube-dl youtube-viewer
 sudo pacman --noconfirm -Sy xdg-utils xdg-user-dirs unzip highlight nmap fzf
 
 # Install gaming software
-sudo pacman --noconfirm -Sy minecraft-launcher steam lutris
+sudo pacman --noconfirm -Sy minecraft-launcher steam
 
 # Add colors to pacman
 sed -i 's/#Color/Color/g' /etc/pacman.conf
