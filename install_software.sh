@@ -124,10 +124,11 @@ rm -f /tmp/plugInstall.txt
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
 
-echo '"source .bashrc" to apply bash aliases, etc.f'
-echo 'startx command to start dwm'
+echo 'Run "source .bashrc" to apply bash configs, aliases, etc.'
+echo 'Run "startx" to start dwm'
+echo 'By default, dwm will start automatically when you login through tty1'
 echo ''
 echo 'terminal     : Alt+Shift+Enter'
 echo 'exit         : Alt+Shift+Q'
-echo 'firefox       : Alt+Shift+F'
+echo 'firefox      : Alt+Shift+F'
 echo 'screenshot   : Alt+Shift+S'
