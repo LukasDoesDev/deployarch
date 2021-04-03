@@ -13,7 +13,7 @@ Do the following in your UEFI/BIOS settings:
 
 Boot to the official installlation ISO and run the following commands:
 ```sh
-loadkeys # <your keyboard layout, for me it's "fi">
+loadkeys # <your keyboard layout here, for me it's "fi">
 # Download and run a script that will download and run the REAL script :D
 bash <(curl -sL thatonelukas.tk/files/deployarch/deployarch.sh)
 ```
