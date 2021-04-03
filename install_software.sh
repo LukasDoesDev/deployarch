@@ -117,8 +117,7 @@ curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.
 
 # Make neovim install plugins
 echo ':PlugInstall' >> /tmp/plugInstall.txt
-echo ':wq' >> /tmp/plugInstall.txt
-echo ':wq' >> /tmp/plugInstall.txt
+echo ':q!' >> /tmp/plugInstall.txt
 nvim -s /tmp/plugInstall.txt
 rm -f /tmp/plugInstall.txt
 
