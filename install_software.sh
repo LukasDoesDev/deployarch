@@ -23,7 +23,7 @@ paru --noconfirm -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
 # Clone repos
 git clone https://github.com/LukasDoesDev/st.git
-git clone https://github.com/LukasDoesDev/dwm-build-scripts
+git clone https://github.com/LukasDoesDev/dwm-build-scripts.git
 git clone https://github.com/LukasDoesDev/dmenu.git
 
 # compile st
