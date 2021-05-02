@@ -36,7 +36,7 @@ cd ..
 
 # build dwm
 cd dwm-build-scripts
-./full.sh
+./full.sh install
 cd ..
 
 # build dmenu
