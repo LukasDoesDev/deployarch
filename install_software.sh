@@ -21,22 +21,25 @@ makepkg -si
 # Install NerdFonts symbols and JetBrains Mono
 sudo pacman -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
+# Install needed packages
+sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv jq
+
 # Clone repos
 git clone https://github.com/LukasDoesDev/st.git
 git clone https://github.com/LukasDoesDev/dwm-build-scripts.git
 git clone https://github.com/LukasDoesDev/dmenu.git
 
-# compile st
+# build st
 cd st
 sudo make clean install
 cd ..
 
-# compile dwm
+# build dwm
 cd dwm-build-scripts
 ./full.sh
 cd ..
 
-# compile dmenu
+# build dmenu
 cd dmenu
 sudo make clean install
 cd ..
@@ -84,9 +87,6 @@ fc-cache
 
 # enable color font support
 paru --noconfirm -S libxft-bgra
-
-# Install packages needed for runtime
-sudo pacman --noconfirm -Sy xorg libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit sxiv jq
 
 # Install rice screenshot software
 sudo pacman --noconfirm -Sy cmatrix
