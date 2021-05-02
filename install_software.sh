@@ -19,7 +19,7 @@ cd paru
 makepkg -si
 
 # Install NerdFonts symbols and JetBrains Mono
-paru --noconfirm -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
+sudo pacman -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
 # Clone repos
 git clone https://github.com/LukasDoesDev/st.git
