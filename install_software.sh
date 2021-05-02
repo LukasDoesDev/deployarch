@@ -23,7 +23,7 @@ paru --noconfirm -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
 # Clone repos
 git clone https://github.com/LukasDoesDev/st.git
-git clone https://github.com/LukasDoesDev/dwm.git
+git clone https://github.com/LukasDoesDev/dwm-build-scripts
 git clone https://github.com/LukasDoesDev/dmenu.git
 
 # compile st
@@ -32,8 +32,8 @@ sudo make clean install
 cd ..
 
 # compile dwm
-cd dwm
-sudo make clean install
+cd dwm-build-scripts
+./full.sh
 cd ..
 
 # compile dmenu
