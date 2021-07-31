@@ -44,9 +44,9 @@ while true; do
     disk_chk=("/dev/${disk}")
     if grep "$disk_chk" devices; then
         if [ "$add_p" = "y" ]; then
-            printf "Would you like to use the default settings for \"%s\"? \n This will create a GPT partition scheme where\n%s1 = 550 MiB boot partition\n%s2 = 8192 MiB swap partition\n%s3 = the rest of the hard disk\n\nEnter y to continue with the default settings or n to customize \n>" $disk_chk ${disk_chk}p ${disk_chk}p ${disk_chk}p
+            printf ${WHITE}"Would you like to use the default settings for \"%s\"? \n This will create a GPT partition scheme where\n%s1 = 550 MiB boot partition\n%s2 = 8192 MiB swap partition\n%s3 = the rest of the hard disk\n\nEnter y to continue with the default settings or n to customize \n>" $disk_chk ${disk_chk}p ${disk_chk}p ${disk_chk}p
         else
-            printf "Would you like to use the default settings for \"%s\"? \n This will create a GPT partition scheme where\n%s1 = 550 MiB boot partition\n%s2 = 8192 MiB swap partition\n%s3 = the rest of the hard disk\n\nEnter y to continue with the default settings or n to customize \n>" $disk_chk $disk_chk $disk_chk $disk_chk
+            printf ${WHITE}"Would you like to use the default settings for \"%s\"? \n This will create a GPT partition scheme where\n%s1 = 550 MiB boot partition\n%s2 = 8192 MiB swap partition\n%s3 = the rest of the hard disk\n\nEnter y to continue with the default settings or n to customize \n>" $disk_chk $disk_chk $disk_chk $disk_chk
         fi
         
         read auto_part_ans
@@ -131,8 +131,8 @@ mkdir /mnt/arch/boot
 mkdir /mnt/arch/boot/efi
 mount --source ${part_1} --target /mnt/arch/boot/efi
 
-printf ${WHITE}"### Installing base, base-devel, linux, linux-firmware and nano packages\n"
-pacstrap /mnt/arch base base-devel linux linux-firmware nano
+printf ${WHITE}"### Installing base, base-devel, linux, linux-firmware and vim packages to a newly created partition\n"
+pacstrap /mnt/arch base base-devel linux linux-firmware vim
 
 printf ${WHITE}"### Generating fstab\n"
 genfstab -U /mnt/arch >> /mnt/arch/etc/fstab
