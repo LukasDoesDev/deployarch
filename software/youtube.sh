@@ -1,0 +1,1 @@
+sudo pacman --noconfirm -Sy youtube-dl youtube-viewer
