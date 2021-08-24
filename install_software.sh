@@ -19,7 +19,7 @@ cd paru
 makepkg -si
 
 # Install needed packages
-sudo pacman --noconfirm -Sy xorg xorg-xrdb libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit xorg-xrandr
+sudo pacman --noconfirm -Sy xorg xorg-xrdb libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit xorg-xrandr alacritty
 
 for f in ./software/*.sh; do
   bash "$f" 
@@ -40,8 +40,8 @@ rm -f /tmp/plugInstall.txt
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
 
-# Configure Nemo to launch urxvt as the terminal emulator
-gsettings set org.cinnamon.desktop.default-applications.terminal exec urxvt
+# Configure Nemo to launch alacritty as the terminal emulator
+gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
 echo 'Run "source .bashrc" to apply bash configs, aliases, etc.'
 echo 'Run "startx" to start dwm'
