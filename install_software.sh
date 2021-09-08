@@ -37,6 +37,10 @@ echo ':q!' >> /tmp/plugInstall.txt
 nvim -s /tmp/plugInstall.txt
 rm -f /tmp/plugInstall.txt
 
+# Make GTK3 apps have dark mode
+echo '[Settings]' >> ~/.config/gtk-3.0/settings.ini
+echo 'gtk-application-prefer-dark-theme=1' >> ~/.config/gtk-3.0/settings.ini
+
 # Configure Nemo to be default file manager
 xdg-mime default nemo.desktop inode/directory
 
