@@ -21,6 +21,9 @@ makepkg -si
 # Install needed packages
 sudo pacman --noconfirm -Sy xorg xorg-xrdb libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit xorg-xrandr rxvt-unicode 
 
+# sudo pacman --noconfirm -S python
+python package_installer.py
+
 for f in ./setup/*.sh; do
   bash "$f" 
 done
