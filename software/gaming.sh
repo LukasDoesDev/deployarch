@@ -1,1 +1,0 @@
-sudo pacman --noconfirm -Sy minecraft-launcher steam

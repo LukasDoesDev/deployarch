@@ -19,9 +19,9 @@ cd paru
 makepkg -si
 
 # Install needed packages
-sudo pacman --noconfirm -Sy xorg xorg-xrdb libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit xorg-xrandr rxvt-unicode
+sudo pacman --noconfirm -Sy xorg xorg-xrdb libx11 libxinerama libxft webkit2gtk dunst feh picom flameshot xorg-xinit xorg-xrandr rxvt-unicode 
 
-for f in ./software/*.sh; do
+for f in ./setup/*.sh; do
   bash "$f" 
 done
 
@@ -37,8 +37,13 @@ echo ':q!' >> /tmp/plugInstall.txt
 nvim -s /tmp/plugInstall.txt
 rm -f /tmp/plugInstall.txt
 
-# Configure Nemo to be default file manager
-xdg-mime default nemo.desktop inode/directory
+# Configure GTK to use dark mode
+# https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7
+# TODO: https://unix.stackexchange.com/questions/137643/editing-ini-like-files-with-a-script#152083
+cat <<EOF >>~/.config/gtk-3.0/settings.ini
+[Settings]
+gtk-application-prefer-dark-theme=1
+EOF
 
 # Configure Nemo to launch urxvt as the terminal emulator
 gsettings set org.cinnamon.desktop.default-applications.terminal exec urxvt

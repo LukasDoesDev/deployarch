@@ -1,1 +1,0 @@
-sudo pacman --noconfirm -S fzf jq
