@@ -8,8 +8,6 @@ MAGENTA='\033[1;35m'
 CYAN='\033[1;96m'
 BLUE='\033[1;34m'
 
-if [[ `id -u` -eq 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
-
 while true; do
   printf ${WHITE}"### Setting timezone\n"
   printf ${CYAN}"Enter your timezone in this format: Area/City\n(ex, Europe/Helsinki, America/New_York, Asia/Singapore, Australia/Sydney)\n(https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)\n>"
