@@ -1,8 +1,8 @@
 echo "Install NerdFonts symbols and JetBrains Mono"
-sudo pacman -S ttf-nerd-fonts-symbols ttf-jetbrains-mono
+sudo pacman --noconfirm -Sy --needed ttf-nerd-fonts-symbols ttf-jetbrains-mono
 
 echo "Setting up Noto Emoji font"
-sudo pacman --noconfirm -Sy noto-fonts-emoji --needed
+sudo pacman --noconfirm -S --needed noto-fonts-emoji --needed
 echo '<?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>

@@ -1,0 +1,198 @@
+---
+comment-packages: Install selected packages
+packages:
+  - name: i3
+    aur:
+      - i3lock
+      - i3exit
+    pacman:
+      - i3-gaps
+      - i3status
+      - flameshot
+      - network-manager-applet
+  - name: music
+    pacman:
+      - ncmpcpp
+      - mpd
+      - mpc
+  - name: minecraft
+    aur:
+      - minecraft-launcher
+  - name: multimc
+    aur:
+      - multimc5
+  - name: programming
+    aur:
+      - vscodium-bin
+    pacman:
+      - python3
+      - python-pip
+      - elixir
+      - rustup
+      - neovim
+  - name: rice screenshot aka l33t h4xx0r
+    comment-aur: ttf-ubraille required for bottom
+    aur:
+      - cava
+      - pipes.sh
+      - ttf-ubraille
+      - pfetch
+      - nerdfetch
+      - cpufetch
+    pacman:
+      - cmatrix
+      - neofetch
+      - bottom
+      - htop
+      - duf
+      - bpytop
+  - name: docker
+    pacman:
+      - ctop
+      - docker
+      - docker-compose
+  - name: steam + amdgpu
+    # mesa lib32-mesa
+    #vulkan-radeon seems to be better than amdvlk, see https://linuxreviews.org/The_Best_Linux_Vulkan_Driver_For_AMD_GPUs:_Mesa_RADV_vs_AMDVLK
+    pacman:
+      - vulkan-radeon
+      - lib32-vulkan-radeon
+      - lib32-fontconfig
+      - steam
+  - name: scripting
+    pacman:
+      - fzf
+      - jq
+      - grep
+      - tree
+      - wget
+      - curl
+      - xdotool
+  - name: tuxi
+    aur:
+      - pup
+      - tuxi-git
+    pacman:
+      - jq
+      - recode
+  - name: nerd-dictation
+    pacman:
+      - python
+      - python-pip
+    script:
+      # exit if an command errors
+      - set -e
+      # keep track of the last executed command
+      - trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+      # echo an error message before exiting
+      - trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
+
+      - 'if [ ! -d "~/dev/nerd-dictation" ] ; then'
+      - mkdir -pv ~/dev/
+      - cd ~/dev/
+      - pip3 install vosk
+      - git clone https://github.com/ideasman42/nerd-dictation.git
+      - 'fi'
+
+      - 'if [ ! -d "~/.config/nerd-dictation/model" ] ; then'
+      - cd /tmp
+      - wget https://alphacephei.com/kaldi/models/vosk-model-small-en-us-0.15.zip
+      - unzip vosk-model-small-en-us-0.15.zip
+      - mkdir -pv ~/.config/nerd-dictation
+      - mv vosk-model-small-en-us-0.15 ~/.config/nerd-dictation
+      - 'fi'
+  - name: youtube
+    aur:
+      - youtube-viewer
+    pacman:
+      - youtube-dl
+  - name: system monitor
+    # ttf-ubraille required for bottom
+    aur:
+      - icdiff
+      - ttf-ubraille
+    pacman:
+      - bottom
+      - htop
+      - tcpdump
+      - duf
+      - bpytop
+  - name: system administration
+    # ttf-ubraille required for bottom
+    aur:
+      - icdiff
+      - ttf-ubraille
+    pacman:
+      - grep
+      - man-db
+      - tree
+      - unzip
+      - zip
+      - pandoc
+      - neovim
+      - bc
+      - highlight
+      - bat
+  - name: network utilities
+    pacman:
+      - rsync
+      - wget
+      - curl
+      - nmap
+  - name: ntfs
+    pacman:
+      - ntfs-3g
+  - name: desktop applications
+    pacman:
+      - audacity
+      - firefox
+      - nemo
+      - discord
+      - gimp
+      - inkscape
+      - sxiv
+      - zathura
+      - xdg-utils
+      - xdg-user-dirs
+      - mpv
+  - name: custom dwm
+    pacman:
+      - base-devel
+      - git
+      - libx11
+      - libxinerama
+      - libxft
+    script:
+      - mkdir -pv ~/dev/rice
+      - cd ~/dev/rice
+      - git clone https://github.com/LukasDoesDev/dwm-build-scripts.git
+      - cd dwm-build-scripts
+      - './full.sh install'
+  - name: custom dmenu
+    script:
+      - mkdir -pv ~/dev/rice
+      - cd ~/dev/rice
+      - git clone https://github.com/LukasDoesDev/dmenu.git
+      - cd dmenu
+      - sudo make clean install
+  - name: xorg + required
+    pacman:
+      - xorg
+      - xorg-xinit
+      - xorg-xrandr
+      - xorg-xrdb
+      - webkit2gtk
+      - dunst
+      - feh
+      - picom
+      - flameshot
+      - rxvt-unicode
+      - pulseaudio
+  - name: crypto
+    aur:
+      - cointop-bin
+
+# If included in any list run the commands specified
+setup:
+  nemo:
+    - xdg-mime default nemo.desktop inode/directory

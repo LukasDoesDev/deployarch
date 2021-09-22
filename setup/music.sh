@@ -2,5 +2,5 @@
 # ^ installed by packages.json
 
 # ˇ TODO: add to dotfiles
-cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
 mkdir -pv ~/.config/mpd
+cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
