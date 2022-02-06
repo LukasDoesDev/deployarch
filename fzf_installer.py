@@ -20,7 +20,7 @@ outputs = {}
 packagelists = []
 
 for packagelist in packages_selected:
-    print('123', packagelist.get('name', 'UNKNOWN NAME'))
+    #print('123', packagelist.get('name', 'UNKNOWN NAME'))
     if packagelist.get('script'):
         scripts.append(packagelist.get('script', ['echo error']))
     pacman_packages.update(packagelist.get('pacman', []))

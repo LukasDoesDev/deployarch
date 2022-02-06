@@ -9,6 +9,7 @@ packages:
       - i3-gaps
       - i3status
       - flameshot
+      - dex
       - network-manager-applet
   - name: music
     pacman:
@@ -21,6 +22,11 @@ packages:
   - name: multimc
     aur:
       - multimc5
+  - name: java
+    pacman:
+      - jdk-openjdk
+      - jre-openjdk
+      - jre-openjdk-headless
   - name: programming
     aur:
       - vscodium-bin
@@ -85,7 +91,7 @@ packages:
       # keep track of the last executed command
       - trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
       # echo an error message before exiting
-      - trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
+      - trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
       - 'if [ ! -d "~/dev/nerd-dictation" ] ; then'
       - mkdir -pv ~/dev/
@@ -131,14 +137,18 @@ packages:
       - pandoc
       - neovim
       - bc
-      - highlight
+      #- highlight
       - bat
+      - bind
   - name: network utilities
     pacman:
       - rsync
       - wget
       - curl
       - nmap
+      - bind
+      - websocat
+      - openbsd-netcat
   - name: ntfs
     pacman:
       - ntfs-3g
@@ -188,9 +198,14 @@ packages:
       - flameshot
       - rxvt-unicode
       - pulseaudio
+      - ttf-liberation
   - name: crypto
     aur:
       - cointop-bin
+  - name: nvim plug
+    script:
+      - curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # If included in any list run the commands specified
 setup:

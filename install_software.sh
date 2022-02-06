@@ -47,7 +47,7 @@ sudo sed -i -z 's|#\[multilib\]\n#Include|[multilib]\nInclude|g' /etc/pacman.con
 sleep 3
 
 # Get dotfiles
-sudo pacman --noconfirm -S --needed rsync curl bash git
+sudo pacman --noconfirm -S --needed rsync curl bash git stow
 curl -fsSL https://raw.githubusercontent.com/LukasDoesDev/dotfiles/master/setup.sh | bash
 
 sleep 3
@@ -57,7 +57,8 @@ sleep 3
 #echo ':q!' >> /tmp/plugInstall.txt
 #nvim -s /tmp/plugInstall.txt
 #rm -f /tmp/plugInstall.txt
-nvim +PlugInstall +qall
+#nvim +PlugInstall +qall
+nvim +PackerSync +qall
 
 # Configure GTK to use dark mode
 # https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7
@@ -69,18 +70,20 @@ grep -q 'gtk-applications-prefer-dark-theme' $HOME/.config/'gtk-3.0'/settings.in
 gtk-application-prefer-dark-theme=1
 EOF
 
-# Configure Nemo to launch urxvt as the terminal emulator
-gsettings set org.cinnamon.desktop.default-applications.terminal exec urxvt
+# Configure Nemo to launch Alacritty as the terminal emulator
+gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-echo 'Run "source .bashrc" to apply bash configs, aliases, etc.'
-echo 'Run "startx" to start dwm'
-echo 'By default, dwm will start automatically when you login through tty1'
-echo ''
-echo 'terminal     : Alt+Shift+Enter'
-echo 'exit         : Alt+Shift+Q'
-echo 'firefox      : Alt+Shift+F'
-echo 'screenshot   : Alt+Shift+S'
-echo 'close window : Alt+Shift+C'
-echo ''
-echo "The latest info on keybinds, patches, etc. can be found in my dwm-build-scripts repository's readme:"
-echo 'https://github.com/LukasDoesDev/dwm-build-scripts#readme'
+echo Done!
+
+#echo 'Run "source .bashrc" to apply bash configs, aliases, etc.'
+#echo 'Run "startx" to start dwm'
+#echo 'By default, dwm will start automatically when you login through tty1'
+#echo ''
+#echo 'terminal     : Alt+Shift+Enter'
+#echo 'exit         : Alt+Shift+Q'
+#echo 'firefox      : Alt+Shift+F'
+#echo 'screenshot   : Alt+Shift+S'
+#echo 'close window : Alt+Shift+C'
+#echo ''
+#echo "The latest info on keybinds, patches, etc. can be found in my dwm-build-scripts repository's readme:"
+#echo 'https://github.com/LukasDoesDev/dwm-build-scripts#readme'
